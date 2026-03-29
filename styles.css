@@ -49,23 +49,26 @@ body {
 }
 
 .links a {
-  width: 60px;      /* tamanho do botão circular */
+  width: 60px;
   height: 60px;
   background: #5F2EEA;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;       /* corta tudo que passar do botão */
   transition: .3s ease-in-out;
 }
 
 .links a img {
-  width: 20px;       /* força tamanho fixo do ícone */
-  height: 20px;
-  object-fit: contain; /* mantém proporção real do ícone */
+  max-width: 20px;        /* tamanho máximo do ícone */
+  max-height: 20px;
+  width: auto;            /* mantém proporção real */
+  height: auto;           /* mantém proporção real */
   display: block;
 }
 
+/* Hover nos botões */
 .links a:hover {
   background: #3b1c90;
   transform: scale(1.1);
