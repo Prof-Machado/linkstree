@@ -40,6 +40,20 @@ body {
   line-height: 1.5; /* facilita leitura */
 }
 
+/* ===== IMAGEM DE PERFIL ===== */
+.profile-img {
+  max-width: 100%;         /* nunca ultrapassa a largura do container */
+  max-height: 120px;       /* altura máxima aceitável */
+  width: auto;             /* mantém proporção */
+  height: auto;            /* mantém proporção */
+  border-radius: 50%;      /* opcional, deixa circular */
+  margin-bottom: 15px;
+  object-fit: contain;     /* ajusta conteúdo ao espaço disponível */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;      /* centraliza horizontalmente */
+}
+
 /* ===== LINKS EM GRADE 3x2 ===== */
 .links {
   display: grid;
