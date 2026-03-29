@@ -44,7 +44,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px; /* espaçamento entre botões */
+  gap: 12px;
   margin-top: 20px;
 }
 
@@ -57,11 +57,14 @@ body {
   justify-content: center;
   align-items: center;
   transition: .3s ease-in-out;
+  overflow: hidden; /* impede que o ícone saia do botão */
 }
 
 .links a img {
-  width: 20px;     /* ícones pequenos */
-  height: 20px;
+  max-width: 24px;   /* tamanho máximo do ícone */
+  max-height: 24px;
+  width: auto;        /* mantém proporção real */
+  height: auto;       /* mantém proporção real */
 }
 
 .links a:hover {
