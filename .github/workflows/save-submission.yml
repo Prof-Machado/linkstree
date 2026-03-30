@@ -35,7 +35,7 @@ jobs:
       # 5️⃣ Adiciona o novo envio
       - name: Add new submission
         run: |
-          echo '${{ github.event.client_payload }}' > new.json
+          echo '${{ toJson(github.event.client_payload) }}' > new.json
           node -e "
             const fs = require('fs');
             const submissions = JSON.parse(fs.readFileSync('data/submissions.json'));
