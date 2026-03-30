@@ -40,6 +40,14 @@ body {
   line-height: 1.5; /* facilita leitura */
 }
 
+/* ===== LINHA DIVISÓRIA ENTRE PERFIL E BOTÕES ===== */
+.divider {
+  border: none;               /* remove borda padrão */
+  height: 1px;                /* linha fina */
+  background-color: #555;     /* cor discreta, combina com fundo escuro */
+  margin: 20px 0;             /* espaço acima e abaixo da linha */
+}
+
 /* ===== IMAGEM DE PERFIL ===== */
 .profile-img {
   max-width: 100%;         /* nunca ultrapassa a largura do container */
