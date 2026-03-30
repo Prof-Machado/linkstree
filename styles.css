@@ -42,40 +42,40 @@ body {
 
 /* ===== LINHA DIVISÓRIA ===== */
 .divider {
-  position: relative;         /* fica dentro do bloco, respeita container */
-  height: 1px;                /* linha fina */
-  background-color: #555;     /* cor discreta */
-  width: 80%;                 /* menor que container */
-  margin: 10px auto 0 auto;   /* apenas espaço acima da linha */
+  height: 1px;
+  background-color: #555;
+  width: 80%;
+  margin-top: 10px;   /* apenas espaço acima */
+  margin-bottom: 10px;/* apenas espaço abaixo, leve */
 }
 
 /* ===== IMAGEM DE PERFIL ===== */
 .profile-img {
-  max-width: 100%;         /* nunca ultrapassa a largura do container */
-  max-height: 120px;       /* altura máxima aceitável */
-  width: auto;             /* mantém proporção */
-  height: auto;            /* mantém proporção */
-  border-radius: 50%;      /* opcional, deixa circular */
+  max-width: 120px;       /* limita largura */
+  max-height: 120px;      /* limita altura */
+  width: auto;
+  height: auto;
+  border-radius: 50%;
   margin-bottom: 15px;
-  object-fit: contain;     /* ajusta conteúdo ao espaço disponível */
   display: block;
   margin-left: auto;
-  margin-right: auto;      /* centraliza horizontalmente */
+  margin-right: auto;
+  object-fit: cover;       /* evita ultrapassar limites do container */
 }
 
 /* ===== LINKS EM GRADE 3x2 ===== */
 .links {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 botões por linha */
-  gap: 15px; /* espaço entre botões */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
   justify-items: center;
-  margin-top: 20px;
+  margin-top: 0; /* margem removida, já temos o divider */
 }
 
 .links a {
   width: 60px;
   height: 60px;
-  background: #fff;       /* fundo branco */
+  background: #fff;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -84,20 +84,18 @@ body {
   transition: .3s ease-in-out;
 }
 
-/* ===== ÍCONES DOS BOTÕES ===== */
 .links a img {
-  max-width: 50px;  
-  max-height: 50px;
+  max-width: 35px;   /* ajustado para ficar proporcional ao botão */
+  max-height: 35px;
   width: auto;
   height: auto;
   display: block;
 }
 
 .links a:hover {
-  background: #dcdcdc;   /* leve escurecimento no hover */
+  background: #dcdcdc;
   transform: scale(1.1);
 }
-
 /* ===== FORMULÁRIO ===== */
 .contact h2 {
   margin-top: 40px; /* antes 30px -> aumenta espaço */
