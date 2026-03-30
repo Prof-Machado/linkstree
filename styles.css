@@ -43,24 +43,19 @@ body {
 /* ===== LINHA DIVISÓRIA ===== */
 .divider {
   height: 1px;
-  background-color: #555;
-  width: 80%;
-  margin-top: 10px;   /* apenas espaço acima */
-  margin-bottom: 10px;/* apenas espaço abaixo, leve */
+  width: 80%;               /* largura da linha menor que container */
+  background-color: #555;   /* cor discreta */
+  margin: 20px auto;        /* centraliza e adiciona espaço acima e abaixo */
 }
 
 /* ===== IMAGEM DE PERFIL ===== */
 .profile-img {
-  max-width: 120px;       /* limita largura */
-  max-height: 120px;      /* limita altura */
-  width: auto;
-  height: auto;
-  border-radius: 50%;
-  margin-bottom: 15px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;       /* forma circular perfeita */
+  object-fit: contain;       /* mantém proporção sem cortar */
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  object-fit: cover;       /* evita ultrapassar limites do container */
+  margin: 0 auto 20px auto; /* centraliza horizontalmente e deixa espaço abaixo */
 }
 
 /* ===== LINKS EM GRADE 3x2 ===== */
@@ -121,9 +116,9 @@ body {
 .contact .terms {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 5px; /* espaço pequeno entre checkbox e texto */
-  margin: 10px 0;
+  justify-content: center; /* ou flex-start se quiser alinhar à esquerda */
+  gap: 5px;                /* espaço entre checkbox e label */
+  margin: 5px 0;           /* diminui espaço vertical */
 }
 
 .contact .terms label {
