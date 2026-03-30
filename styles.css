@@ -115,15 +115,15 @@ body {
 
 .contact .terms {
   display: flex;
-  align-items: center;       /* alinha verticalmente checkbox e texto */
-  justify-content: center;   /* centraliza horizontalmente no container */
-  gap: 10px;                 /* aumenta espaço entre checkbox e label */
-  margin: 15px 0;            /* dá mais espaço vertical entre campos e botão */
+  align-items: center;        /* alinha verticalmente */
+  justify-content: center;    /* centraliza o bloco inteiro */
+  gap: 6px;                   /* pequeno espaçamento entre checkbox e label */
+  margin: 12px 0 20px 0;      /* espaço acima e abaixo do bloco */
 }
 
 .contact .terms input[type="checkbox"] {
-  transform: scale(1.2);     /* opcional: deixa checkbox um pouco maior */
-  margin-right: 5px;         /* garante espaço extra entre checkbox e label */
+  transform: scale(1.2);      /* aumenta checkbox para melhor visual */
+  margin: 0;                  /* remove margens extras que afastam do label */
 }
 
 .contact .terms label {
