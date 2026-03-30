@@ -42,10 +42,11 @@ body {
 
 /* ===== LINHA DIVISÓRIA ===== */
 .divider {
-  height: 1px;               /* linha fina */
-  background-color: #555;    /* cor discreta */
-  width: 80%;                /* linha menor que o container */
-  margin: 15px auto;         /* espaço acima e abaixo e centralizada */
+  position: relative;         /* fica dentro do bloco, respeita container */
+  height: 1px;                /* linha fina */
+  background-color: #555;     /* cor discreta */
+  width: 80%;                 /* menor que container */
+  margin: 10px auto 0 auto;   /* apenas espaço acima da linha */
 }
 
 /* ===== IMAGEM DE PERFIL ===== */
