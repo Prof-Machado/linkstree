@@ -40,16 +40,12 @@ body {
   line-height: 1.5; /* facilita leitura */
 }
 
-/* ===== LINHA DIVISÓRIA ENTRE PERFIL E BOTÕES ===== */
+/* ===== LINHA DIVISÓRIA ===== */
 .divider {
-  border: none;               /* remove borda padrão */
-  height: 1px;                /* linha fina */
-  background-color: #555;     /* cor discreta */
-  margin-top: 15px;           /* espaço acima da linha */
-  margin-bottom: 15px;        /* espaço abaixo da linha */
-  width: 80%;                 /* deixa um pouco menor que a largura total */
-  margin-left: auto;
-  margin-right: auto;         /* centraliza horizontalmente */
+  height: 1px;               /* linha fina */
+  background-color: #555;    /* cor discreta */
+  width: 80%;                /* linha menor que o container */
+  margin: 15px auto;         /* espaço acima e abaixo e centralizada */
 }
 
 /* ===== IMAGEM DE PERFIL ===== */
