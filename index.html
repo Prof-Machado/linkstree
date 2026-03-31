@@ -2,75 +2,89 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+
+  <!-- Responsividade correta -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>MACHADO, M. Y. M.</title>
+
+  <!-- CSS externo -->
   <link rel="stylesheet" href="styles.css">
 
-  <!-- Open Graph (WhatsApp, LinkedIn, etc) -->
+  <!-- SEO / Compartilhamento -->
   <meta property="og:title" content="Machado - Scientific Portfolio">
-  <meta property="og:description" content="Researcher in Materials Characterization and Process Modeling. Explore projects and collaborations.">
+  <meta property="og:description" content="Researcher in Materials Characterization and Process Modeling.">
   <meta property="og:image" content="https://prof-machado.github.io/linktfolio/assets/preview.png">
   <meta property="og:url" content="https://prof-machado.github.io/linktfolio/">
   <meta property="og:type" content="website">
 
-  <!-- Twitter Card -->
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Machado - Scientific Portfolio">
-  <meta name="twitter:description" content="Researcher in Materials Characterization and Process Modeling.">
-  <meta name="twitter:image" content="https://prof-machado.github.io/linktfolio/assets/preview.png">
-
 </head>
+
 <body>
+
+  <!-- CONTAINER CENTRAL -->
   <div class="container">
 
     <!-- PERFIL -->
     <div class="profile">
-  <img src="assets/foto-perfil.png" alt="Foto Perfil" class="profile-img">
-  <h1>MACHADO, M. Y. M.</h1>
-  <p>Scientific and Laboratory Technical Support Professional</p>
-  <p>Researcher in Materials Characterization and Process Modeling</p>
+      <img src="assets/foto-perfil.png" alt="Foto Perfil" class="profile-img">
 
-  <!-- LINHA HORIZONTAL -->
-  <div class="divider"></div>
-</div>
+      <h1>MACHADO, M. Y. M.</h1>
 
-<!-- BLOCO DE BOTÕES -->
-<div class="links">
-  <a href="http://lattes.cnpq.br/3291431101358065" target="_blank">
-    <img src="assets/lattes.png" alt="Lattes">
-  </a>
-  <a href="https://www.linkedin.com/in/profmachado/" target="_blank">
-    <img src="assets/linkedin.png" alt="LinkedIn">
-  </a>
-  <a href="https://github.com/Prof-Machado" target="_blank">
-    <img src="assets/github.png" alt="GitHub">
-  </a>
-  <a href="https://learn.microsoft.com/" target="_blank">
-    <img src="assets/microsoft.png" alt="Microsoft Learn">
-  </a>
-  <a href="https://www.even3.com.br/certificate/list/3364379-f72def06c6d40c090529f45b-baa93b7c66bc56a74a6a055c-e917e29fc696d05efdfc2dff?ca=cert_d_003" target="_blank">
-    <img src="assets/even3.png" alt="Even3">
-  </a>
-  <a href="mailto:manuela.y.machado@gmail.com" target="_blank">
-    <img src="assets/email.gif" alt="E-mail">
-  </a>
-</div>
+      <p>Scientific and Laboratory Technical Support Professional</p>
+      <p>Researcher in Materials Characterization and Process Modeling</p>
 
-    <!-- FORMULÁRIO DE CONTATO -->
+      <div class="divider"></div>
+    </div>
+
+    <!-- LINKS -->
+    <div class="links">
+      <a href="http://lattes.cnpq.br/3291431101358065" target="_blank">
+        <img src="assets/lattes.png">
+      </a>
+      <a href="https://www.linkedin.com/in/profmachado/" target="_blank">
+        <img src="assets/linkedin.png">
+      </a>
+      <a href="https://github.com/Prof-Machado" target="_blank">
+        <img src="assets/github.png">
+      </a>
+      <a href="https://learn.microsoft.com/" target="_blank">
+        <img src="assets/microsoft.png">
+      </a>
+      <a href="https://www.even3.com.br/" target="_blank">
+        <img src="assets/even3.png">
+      </a>
+      <a href="mailto:manuela.y.machado@gmail.com">
+        <img src="assets/email.gif">
+      </a>
+    </div>
+
+    <!-- FORMULÁRIO -->
     <div class="contact">
-  <h2>Contact for Collaborations and Projects:</h2>
- <form id="contactForm">
-  <input type="text" name="name" placeholder="Nome" required>
-  <input type="email" name="email" placeholder="E-mail" required>
-  <textarea name="message" placeholder="Texto" rows="4" required></textarea>
-  <div class="terms">
-    <input type="checkbox" name="terms" id="terms" required>
-    <label for="terms">Aceito os termos de uso</label>
-  </div>
-  <button type="submit">Enviar</button>
-</form>
-<script src="form.js"></script>
+      <h2>Contact for Collaborations and Projects:</h2>
 
- <img src="assets/sticker.gif" class="sticker">     
+      <form id="contactForm">
+        <input type="text" name="name" placeholder="Nome" required>
+        <input type="email" name="email" placeholder="E-mail" required>
+        <textarea name="message" placeholder="Texto" rows="4" required></textarea>
+
+        <div class="terms">
+          <input type="checkbox" id="terms" required>
+          <label for="terms">Aceito os termos de uso</label>
+        </div>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- STICKER CENTRAL FIXO (CORRETO) -->
+  <img src="assets/sticker.gif" class="sticker">
+
+  <script src="form.js"></script>
+
 </body>
 </html>
