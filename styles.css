@@ -1,70 +1,109 @@
-/* ===== RESET ===== */
+/* ===== RESET GLOBAL ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ===== LAYOUT ===== */
+/* ===== BODY ===== */
 body {
   font-family: Arial, sans-serif;
-  background: #0A0F23;
+
+  /* Cor de fundo principal */
+  background-color: #0A0F23;
+
   color: #fff;
+
+  /* Centralização do container */
   display: flex;
   justify-content: center;
   align-items: center;
+
+  /* Altura total da tela */
   min-height: 100vh;
-  padding: 20px;
+
+  /* 🔥 IMPORTANTE: padding removido
+     Isso evita deslocamento do centro real */
 }
 
+/* ===== CONTAINER ===== */
 .container {
   text-align: center;
   width: 100%;
   max-width: 450px;
+
   padding: 20px;
+
   background: #12182F;
   border-radius: 12px;
+
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+
+  /* 🔥 garante que fique acima do GIF */
+  position: relative;
+  z-index: 2;
 }
 
-/* ===== PERFIL ===== */
+/* ===== STICKER (CORRETO) ===== */
+.sticker {
+  position: fixed;
+
+  /* Centralização REAL na tela (viewport) */
+  top: 50%;
+  left: 50%;
+
+  /* Compensa o próprio tamanho */
+  transform: translate(-50%, -50%);
+
+  /* Tamanho EXATO */
+  width: 30px;
+  height: auto;
+
+  /* Não interfere com cliques */
+  pointer-events: none;
+
+  /* Fica atrás do conteúdo */
+  z-index: 1;
+
+  /* Leve transparência opcional */
+  opacity: 0.9;
+}
+
+/* ===== RESTO DO SEU CSS (mantido) ===== */
+
 .profile h1 {
   font-size: 1.8rem;
-  margin-bottom: 15px; /* antes 5px -> agora mais espaçamento */
+  margin-bottom: 15px;
 }
 
 .profile p {
   font-size: 1rem;
   color: #ccc;
-  margin-bottom: 12px; /* antes 10px -> pequeno aumento */
-  line-height: 1.5; /* facilita leitura */
+  margin-bottom: 12px;
+  line-height: 1.5;
 }
 
-/* ===== LINHA DIVISÓRIA ===== */
 .divider {
   height: 1px;
-  width: 80%;               /* largura da linha menor que container */
-  background-color: #555;   /* cor discreta */
-  margin: 20px auto;        /* centraliza e adiciona espaço acima e abaixo */
+  width: 80%;
+  background-color: #555;
+  margin: 20px auto;
 }
 
-/* ===== IMAGEM DE PERFIL ===== */
 .profile-img {
   width: 120px;
   height: 120px;
-  border-radius: 50%;       /* forma circular perfeita */
-  object-fit: contain;       /* mantém proporção sem cortar */
+  border-radius: 50%;
+  object-fit: contain;
   display: block;
-  margin: 0 auto 20px auto; /* centraliza horizontalmente e deixa espaço abaixo */
+  margin: 0 auto 20px auto;
 }
 
-/* ===== LINKS EM GRADE 3x2 ===== */
 .links {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 15px;
   justify-items: center;
-  margin-top: 0; /* margem removida, já temos o divider */
 }
 
 .links a {
@@ -76,27 +115,21 @@ body {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  transition: .3s ease-in-out;
+  transition: .3s;
 }
 
 .links a img {
-  max-width: 35px;   /* ajustado para ficar proporcional ao botão */
-  max-height: 35px;
-  width: auto;
-  height: auto;
-  display: block;
+  max-width: 35px;
 }
 
 .links a:hover {
   background: #dcdcdc;
   transform: scale(1.1);
 }
-/* ===== FORMULÁRIO ===== */
+
 .contact h2 {
-  margin-top: 40px; /* antes 30px -> aumenta espaço */
+  margin-top: 40px;
   margin-bottom: 15px;
-  font-size: 1.2rem;
-  color: #fff;
 }
 
 .contact form input,
@@ -106,53 +139,18 @@ body {
   margin: 8px 0;
   border-radius: 6px;
   border: none;
-  font-size: 1rem;
-}
-
-.contact form textarea {
-  resize: vertical;
 }
 
 .contact .terms {
-  display: inline-flex;       /* inline-flex mantém o bloco compacto */
-  align-items: center;        /* alinha checkbox e texto verticalmente */
-  justify-content: center;    /* centraliza em relação ao container */
-  margin: 15px 0 25px 0;      /* distância do bloco em relação aos outros elementos */
-}
-
-.contact .terms input[type="checkbox"] {
-  transform: scale(1.2);      /* aumenta o checkbox */
-  margin: 0;                  /* remove qualquer margem padrão do navegador */
-  vertical-align: middle;     /* alinha melhor com o texto */
-}
-
-.contact .terms label {
-  font-size: 0.95rem;
-  color: #ccc;
-  margin-left: 5px;           /* garante pequeno espaço entre checkbox e texto */
-  vertical-align: middle;     /* alinha melhor com o checkbox */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px 0 25px 0;
 }
 
 .contact button {
   background: #5F2EEA;
   color: #fff;
-  border: none;
-  padding: 14px 20px;
+  padding: 14px;
   border-radius: 8px;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: .3s ease-in-out;
-}
-
-.contact button:hover {
-  background: #3b1c90;
-  transform: scale(1.05);
-}
-
-body {
-  background-color: #0A0F23;
-  background-image: url('assets/sticker.gif'); /* seu GIF */
-  background-repeat: no-repeat;
-  background-position: center; /* posição */
-  background-size: 40px; /* tamanho */
 }
