@@ -32,6 +32,7 @@ body {
 
   /* IMPORTANTE:
      Não usamos padding aqui para não deslocar o centro real da tela */
+padding: 40px 0; /* 👈 ESPAÇO NO TOPO E NO FUNDO */
 }
 
 
@@ -45,7 +46,9 @@ body {
   width: 100%;
   max-width: 450px; /* Limita largura máxima (layout compacto) */
 
-  padding: 20px; /* Espaçamento interno */
+  padding: 25px; /* Espaçamento interno */
+
+  margin: 20px 0; /* 👈 AQUI: espaço acima e abaixo do container */
 
   /* Cor da caixa central (cartão) */
   background: #12182F;
@@ -168,14 +171,14 @@ body {
 .contact form textarea {
   width: 90%;
 
-  padding: 12px;
+  padding: 8px 10px; /* menor altura */
 
-  margin: 8px 0;
+  margin: 6px 0; /* menos espaçamento */
 
   border-radius: 6px;
   border: none;
 
-  font-size: 1rem;
+  font-size: 0.95rem; /* levemente menor */
 }
 
 /* Permite redimensionar apenas verticalmente */
