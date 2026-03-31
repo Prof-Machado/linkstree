@@ -1,131 +1,225 @@
-/* ===== RESET GLOBAL ===== */
+/* ===================================================== */
+/* ===== RESET GLOBAL ================================== */
+/* ===================================================== */
+/* Remove margens e paddings padrão do navegador         */
+/* Garante consistência entre diferentes browsers        */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; /* Inclui padding e border no tamanho total */
 }
 
-/* ===== BODY ===== */
-body {
-  font-family: Arial, sans-serif;
 
-  /* Cor de fundo principal */
+/* ===================================================== */
+/* ===== BODY (ESTRUTURA PRINCIPAL DA PÁGINA) ========== */
+/* ===================================================== */
+body {
+  font-family: Arial, sans-serif; /* Fonte padrão */
+
+  /* Cor de fundo principal (fundo geral do site) */
   background-color: #0A0F23;
 
-  color: #fff;
+  /* Cor padrão do texto */
+  color: #ffffff;
 
-  /* Centralização do container */
+  /* Centralização TOTAL do container */
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center;  /* Centraliza horizontalmente */
+  align-items: center;      /* Centraliza verticalmente */
 
-  /* Altura total da tela */
+  /* Faz o body ocupar toda a altura da tela */
   min-height: 100vh;
 
-  /* IMPORTANTE: padding removido
-     Isso evita deslocamento do centro real */
+  /* IMPORTANTE:
+     Não usamos padding aqui para não deslocar o centro real da tela */
 }
 
-/* ===== CONTAINER ===== */
+
+/* ===================================================== */
+/* ===== CONTAINER PRINCIPAL ============================ */
+/* ===================================================== */
+/* Caixa central onde todo o conteúdo fica */
 .container {
-  text-align: center;
+  text-align: center; /* Centraliza textos */
+
   width: 100%;
-  max-width: 450px;
+  max-width: 450px; /* Limita largura máxima (layout compacto) */
 
-  padding: 20px;
+  padding: 20px; /* Espaçamento interno */
 
+  /* Cor da caixa central (cartão) */
   background: #12182F;
+
+  /* Bordas arredondadas */
   border-radius: 12px;
 
+  /* Sombra para efeito de profundidade */
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 
-  /* garante que fique acima do GIF */
+  /* Garante que fique acima de elementos externos (ex: efeitos) */
   position: relative;
   z-index: 2;
 }
 
-/* ===== RESTO DO SEU CSS (mantido) ===== */
 
+/* ===================================================== */
+/* ===== PERFIL ======================================== */
+/* ===================================================== */
+
+/* Nome principal */
 .profile h1 {
   font-size: 1.8rem;
   margin-bottom: 15px;
 }
 
+/* Descrição */
 .profile p {
   font-size: 1rem;
-  color: #ccc;
+  color: #cccccc; /* Cinza claro para hierarquia visual */
   margin-bottom: 12px;
-  line-height: 1.5;
+  line-height: 1.5; /* Melhora leitura */
 }
 
+
+/* ===================================================== */
+/* ===== LINHA DIVISÓRIA =============================== */
+/* ===================================================== */
 .divider {
   height: 1px;
-  width: 80%;
-  background-color: #555;
-  margin: 20px auto;
+  width: 80%;              /* Não ocupa toda largura */
+  background-color: #555;  /* Cor suave */
+  margin: 20px auto;       /* Centraliza horizontalmente */
 }
 
+
+/* ===================================================== */
+/* ===== IMAGEM DE PERFIL ============================== */
+/* ===================================================== */
 .profile-img {
   width: 120px;
   height: 120px;
-  border-radius: 50%;
-  object-fit: contain;
+
+  border-radius: 50%; /* Forma circular */
+
+  object-fit: contain; /* Mantém proporção da imagem */
+
   display: block;
-  margin: 0 auto 20px auto;
+  margin: 0 auto 20px auto; /* Centraliza e adiciona espaço inferior */
 }
 
+
+/* ===================================================== */
+/* ===== LINKS (GRADE DE BOTÕES) ======================= */
+/* ===================================================== */
 .links {
   display: grid;
+
+  /* 3 colunas iguais */
   grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-  justify-items: center;
+
+  gap: 15px; /* Espaçamento entre botões */
+
+  justify-items: center; /* Centraliza cada item */
 }
 
+/* Botões circulares */
 .links a {
   width: 60px;
   height: 60px;
-  background: #fff;
+
+  background: #ffffff;
+
   border-radius: 50%;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   overflow: hidden;
-  transition: .3s;
+
+  transition: 0.3s ease-in-out; /* Animação suave */
 }
 
+/* Imagens dentro dos botões */
 .links a img {
   max-width: 35px;
+  max-height: 35px;
 }
 
+/* Efeito ao passar o mouse */
 .links a:hover {
   background: #dcdcdc;
-  transform: scale(1.1);
+  transform: scale(1.1); /* Leve aumento */
 }
 
+
+/* ===================================================== */
+/* ===== FORMULÁRIO ==================================== */
+/* ===================================================== */
+
+/* Título do formulário */
 .contact h2 {
   margin-top: 40px;
   margin-bottom: 15px;
 }
 
+/* Inputs e textarea */
 .contact form input,
 .contact form textarea {
   width: 90%;
+
   padding: 12px;
+
   margin: 8px 0;
+
   border-radius: 6px;
   border: none;
+
+  font-size: 1rem;
 }
 
+/* Permite redimensionar apenas verticalmente */
+.contact form textarea {
+  resize: vertical;
+}
+
+
+/* ===================================================== */
+/* ===== TERMOS (CHECKBOX + TEXTO) ===================== */
+/* ===================================================== */
 .contact .terms {
   display: inline-flex;
+
   align-items: center;
   justify-content: center;
+
   margin: 15px 0 25px 0;
 }
 
+
+/* ===================================================== */
+/* ===== BOTÃO (CORRIGIDO CONFORME PEDIDO) ============= */
+/* ===================================================== */
 .contact button {
-  background: #5F2EEA;
-  color: #fff;
-  padding: 14px;
+  background: #ffffff; /* Fundo branco */
+
+  color: #000000; /* Texto preto */
+
+  border: 1px solid #cccccc; /* Borda leve (acabamento profissional) */
+
+  padding: 14px 20px;
+
   border-radius: 8px;
+
+  font-size: 1.1rem;
+
+  cursor: pointer;
+
+  transition: 0.3s ease-in-out;
+}
+
+/* Efeito ao passar o mouse */
+.contact button:hover {
+  background: #e5e5e5; /* Cinza claro */
+  transform: scale(1.05);
 }
