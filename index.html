@@ -31,26 +31,34 @@
 <body>
 
   <!-- ===================================================== -->
-  <!-- CAMADA DE FUNDO COM GIF (NOVA IMPLEMENTAÇÃO)          -->
+  <!-- CAMADA 1: GIF DE FUNDO                               -->
   <!-- ===================================================== -->
   <!--
-    IMPORTANTE:
-    - Essa div cria uma camada visual acima do fundo escuro
-    - O GIF fica "flutuando" na tela inteira
-    - NÃO interfere nos cliques (pointer-events: none no CSS)
-    - NÃO substitui o fundo, apenas cobre com transparência
+    Camada base animada:
+    - Ocupa 100% da tela
+    - Fica acima do fundo escuro
+    - Fica abaixo do overlay e conteúdo
   -->
   <div class="bg-gif"></div>
 
+  <!-- ===================================================== -->
+  <!-- CAMADA 2: OVERLAY (ESCURECIMENTO + BLUR)              -->
+  <!-- ===================================================== -->
+  <!--
+    Camada intermediária:
+    - Aplica escurecimento (melhora leitura)
+    - Aplica blur (efeito moderno tipo glass)
+    - NÃO bloqueia cliques
+  -->
+  <div class="bg-overlay"></div>
+
 
   <!-- ===================================================== -->
-  <!-- CONTAINER CENTRAL (CONTEÚDO PRINCIPAL)                -->
+  <!-- CAMADA 3: CONTEÚDO PRINCIPAL                          -->
   <!-- ===================================================== -->
   <div class="container">
 
-    <!-- ===================================================== -->
-    <!-- PERFIL                                                -->
-    <!-- ===================================================== -->
+    <!-- PERFIL -->
     <div class="profile">
       <img src="assets/foto-perfil.png" alt="Foto Perfil" class="profile-img">
 
@@ -62,9 +70,7 @@
       <div class="divider"></div>
     </div>
 
-    <!-- ===================================================== -->
-    <!-- LINKS (ÍCONES CLICÁVEIS)                              -->
-    <!-- ===================================================== -->
+    <!-- LINKS -->
     <div class="links">
       <a href="http://lattes.cnpq.br/3291431101358065" target="_blank">
         <img src="assets/lattes.png">
@@ -86,9 +92,7 @@
       </a>
     </div>
 
-    <!-- ===================================================== -->
-    <!-- FORMULÁRIO                                            -->
-    <!-- ===================================================== -->
+    <!-- FORMULÁRIO -->
     <div class="contact">
       <h2>Contact for Collaborations and Projects:</h2>
 
@@ -108,7 +112,6 @@
 
   </div>
 
-  <!-- SCRIPT -->
   <script src="form.js"></script>
 
 </body>
