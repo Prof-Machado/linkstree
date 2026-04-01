@@ -31,7 +31,7 @@ body {
   min-height: 100vh;
 
   /* IMPORTANTE:
-     Não usamos padding aqui para não deslocar o centro real da tela */
+     Padding aqui para não deslocar o centro real da tela */
 padding: 40px 0; /* 👈 ESPAÇO NO TOPO E NO FUNDO */
 }
 
@@ -164,6 +164,8 @@ padding: 40px 0; /* 👈 ESPAÇO NO TOPO E NO FUNDO */
 .contact h2 {
   margin-top: 40px;
   margin-bottom: 15px;
+
+  font-size: 0.9rem; /* 👈 DIMINUI O TEXTO */
 }
 
 /* Inputs e textarea */
