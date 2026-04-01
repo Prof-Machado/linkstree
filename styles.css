@@ -151,8 +151,8 @@ padding: 40px 0; /* 👈 ESPAÇO NO TOPO E NO FUNDO */
 
 /* Efeito ao passar o mouse */
 .links a:hover {
-  background: #dcdcdc;
-  transform: scale(1.1); /* Leve aumento */
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* efeito premium */
 }
 
 
