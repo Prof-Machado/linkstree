@@ -87,16 +87,27 @@ body {
   width: 100%;
   max-width: 450px;
 
-  padding: 25px;
+  padding: 28px;
   margin: 20px 0;
 
-  background: #12182F;
+  /*  GLASSMORPHISM BASE */
+  background: rgba(255, 255, 255, 0.08);
 
-  border-radius: 12px;
+  /*  BLUR REAL DO VIDRO */
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  /*  BORDA SUTIL (EFEITO IOS) */
+  border: 1px solid rgba(255, 255, 255, 0.18);
 
-  /* AGORA ACIMA DE TODAS AS CAMADAS */
+  border-radius: 20px;
+
+  /*  SOMBRA SUAVE (NÃO PESADA) */
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+
+  /*  POSIÇÃO */
   position: relative;
   z-index: 3;
 }
