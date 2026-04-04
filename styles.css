@@ -68,17 +68,32 @@ body {
 /* ===================================================== */
 .container {
   text-align: center;
+
   width: 100%;
   max-width: 450px;
-  padding: 25px;
-  margin: 20px 0;
-  background: #12182F;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 
-  /* AGORA ACIMA DE TODAS AS CAMADAS */
+  padding: 28px;
+  margin: 20px 0;
+
+  /* 🔥 vidro mais equilibrado */
+  background: rgba(18, 24, 47, 0.38);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border-radius: 20px;
+
+  /* ❗ remove QUALQUER interferência de borda */
+  border: none;
+
+  /* 🔥 sombra mais limpa (sem “halo” nas bordas) */
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+
   position: relative;
   z-index: 3;
+
+  /* 🔥 ESSENCIAL: corrige diferença borda x centro */
+  background-clip: padding-box;
 }
 
 /* ===================================================== */
