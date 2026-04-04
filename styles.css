@@ -76,10 +76,10 @@ body {
   margin: 20px 0;
 
   /* 🔥 vidro mais equilibrado */
-  background: rgba(18, 24, 47, 0.38);
+  background: rgba(18, 24, 47, 0.18);
 
   backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(15px);
 
   border-radius: 20px;
 
@@ -87,7 +87,9 @@ body {
   border: none;
 
   /* 🔥 sombra mais limpa (sem “halo” nas bordas) */
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+  box-shadow:
+  0 12px 35px rgba(0, 0, 0, 0.35),
+  inset 0 1px 0 rgba(18, 24, 47, 0.12);
 
   position: relative;
   z-index: 3;
