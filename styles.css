@@ -8,6 +8,19 @@
 }
 
 /* ===================================================== */
+/* ===== VARIÁVEIS GLOBAIS ============================== */
+/* ===================================================== */
+:root {
+  --accent: #7cc8ff;
+  --accent-2: #4aa3ff;
+  --line: rgba(255,255,255,0.15);
+  --line-strong: rgba(255,255,255,0.4);
+
+  --shadow-soft: 0 8px 25px rgba(0,0,0,0.25);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ===================================================== */
 /* ===== BODY (BASE DA PÁGINA) ========================== */
 /* ===================================================== */
 body {
@@ -33,34 +46,21 @@ body {
   background: url("assets/seu-gif.gif") center/cover no-repeat;
   pointer-events: none;
   z-index: 1;
-  opacity: 0.5; /* controla intensidade do GIF */
+  opacity: 0.5;
 }
 
 /* ===================================================== */
-/* ===== CAMADA 2: OVERLAY (ESCURECE + BLUR) ============ */
+/* ===== CAMADA 2: OVERLAY ============================== */
 /* ===================================================== */
-
-/* IMPORTANTE:
-   - Fica ACIMA do GIF
-   - Fica ABAIXO do conteúdo
-   - Escurece o fundo (melhora contraste)
-   - Aplica blur real (efeito vidro)
-*/
-
 .bg-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-
-  /* Cor escura semi-transparente */
   background: rgba(0, 0, 0, 0.5);
-
-  /* Blur moderno */
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-
   pointer-events: none;
   z-index: 2;
 }
@@ -70,14 +70,11 @@ body {
 /* ===================================================== */
 .container {
   text-align: center;
-
   width: 100%;
   max-width: 450px;
-
   padding: 28px;
   margin: 20px 0;
 
-/* vidro mais limpo (menos leite) */
   background: rgba(18, 24, 47, 0.02);
 
   backdrop-filter: blur(14px);
@@ -86,11 +83,10 @@ body {
   border-radius: 20px;
   border: none;
 
-/* contraste real (sem glow plástico) */
   box-shadow: 
-    0 1px 2px rgba(143, 143, 143, 0.15),          /* profundidade */
-    inset 0 1px 0 rgba(255, 255, 255, 0.05),  /* linha de luz real */
-    inset 0 -1px 0 rgba(0, 0, 0, 0.1);        /* corte inferior */
+    0 1px 2px rgba(143, 143, 143, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
 
   position: relative;
   z-index: 3;
@@ -99,7 +95,7 @@ body {
   background-clip: padding-box;
 }
 
-/* REFLEXO DIRECIONAL (VIDRO REAL) */
+/* REFLEXO */
 .container::before {
   content: '';
   position: absolute;
@@ -145,44 +141,78 @@ body {
 /* ===== IMAGEM DE PERFIL ============================== */
 /* ===================================================== */
 .profile-img {
-  width: 120px;
-  height: 120px;
+  width: 128px;
+  height: 128px;
   border-radius: 50%;
-  object-fit: contain;
+  object-fit: cover;
+
   display: block;
-  margin: 0 auto 20px auto;
+  margin: 0 auto 22px;
+
+  border: 5px solid var(--line-strong);
+
+  box-shadow: 
+    0 0 0 6px rgba(124, 200, 255, 0.12),
+    var(--shadow-soft);
+
+  transition: all 0.4s var(--ease-out);
+}
+
+.profile-img:hover {
+  transform: scale(1.06) rotate(4deg);
+  border-color: var(--accent);
 }
 
 /* ===================================================== */
 /* ===== LINKS ========================================= */
 /* ===================================================== */
+
 .links {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-  justify-items: center;
+  gap: 16px;
+
+  justify-items: center; /* garante centralização horizontal */
+  align-items: center;   /* garante centralização vertical */
 }
 
 .links a {
-  width: 60px;
-  height: 60px;
-  background: #ffffff;
+  width: 64px;
+  height: 64px;
+
   border-radius: 50%;
+
   display: flex;
-  justify-content: center;
   align-items: center;
-  overflow: hidden;
-  transition: 0.3s ease-in-out;
+  justify-content: center;
+
+  background: #ffffff; /* fundo branco FIXO */
+  border: 1px solid var(--line);
+
+  transition: all 0.35s ease;
+}
+
+/* ===================================================== */
+/* ===== EFEITO APENAS NO HOVER ========================= */
+/* ===================================================== */
+
+.links a:hover {
+  transform: translateY(-4px) scale(1.08);
+
+  background: linear-gradient(
+    135deg,
+    var(--accent),
+    var(--accent-2)
+  );
+
+  box-shadow:
+    0 10px 30px rgba(124, 200, 255, 0.3),
+    0 0 20px rgba(124, 200, 255, 0.2);
 }
 
 .links a img {
-  max-width: 35px;
-  max-height: 35px;
-}
-
-.links a:hover {
-  transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  width: 28px;
+  height: auto; /* mantém proporção correta */
 }
 
 /* ===================================================== */
@@ -202,9 +232,7 @@ body {
 
   border-radius: 6px;
 
-  /* 🔥 transparente como o container */
   background: rgba(255, 255, 255, 0.02);
-
   border: 1px solid rgba(255,255,255,0.08);
 
   color: #ffffff;
@@ -231,31 +259,51 @@ body {
 .contact button {
   background: #ffffff;
   color: #000000;
-  border: 1px solid #cccccc;
-  padding: 14px 20px;
+
+  border: 1px solid var(--line);
   border-radius: 8px;
+
+  padding: 14px 20px;
   font-size: 1.1rem;
+
   cursor: pointer;
-  transition: 0.3s ease-in-out;
+
+  transition: all 0.3s ease;
 }
 
+/* HOVER IGUAL AO DOS ÍCONES */
 .contact button:hover {
-  background: #ffffff;
   transform: scale(1.05);
+
+  background: linear-gradient(
+    135deg,
+    var(--accent),
+    var(--accent-2)
+  );
+
+  color: #07111f;
+
+  box-shadow:
+    0 10px 30px rgba(124,200,255,0.4),
+    0 0 20px rgba(124,200,255,0.3);
+}
+
+.contact button:active {
+  transform: scale(0.97);
 }
 
 /* ===================================================== */
-/* ===== AJUSTE MOBILE (RESPONSIVIDADE REAL) ============ */
+/* ===== RESPONSIVIDADE ================================ */
 /* ===================================================== */
 @media (max-width: 480px) {
 
   body {
-    padding: 20px 12px; /* cria respiro nas laterais */
+    padding: 20px 12px;
   }
 
   .container {
     max-width: 100%;
-    padding: 22px 18px; /* reduz levemente o padding interno */
+    padding: 22px 18px;
     margin: 0 auto;
   }
 
